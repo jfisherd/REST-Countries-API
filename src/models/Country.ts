@@ -1,13 +1,14 @@
 export class Country {
-    name: string;
-    topLevelDomain: string[];
-    capital: string;
-    subregion: string;
-    region: string;
-    population: number;
-    borders: string[];
-    currencies: object[];
-    languages: object[];
+    name: string
+    topLevelDomain: string[]
+    capital: string
+    subregion: string
+    region: string
+    population: number
+    borders?: string[]
+    currencies: object[]
+    languages: object[]
+    flags: object
 
     constructor(
         name: string,
@@ -18,7 +19,8 @@ export class Country {
         population: number,
         borders: string[],
         currencies: object[],
-        languages: object[]
+        languages: object[],
+        flags: object
     ) {
         this.name = name
         this.topLevelDomain = topLevelDomain
@@ -29,5 +31,6 @@ export class Country {
         this.borders = borders
         this.currencies = currencies
         this.languages = languages
+        this.flags = flags
     }
 }

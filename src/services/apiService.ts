@@ -25,11 +25,9 @@ export const contactApi = async (): Promise<Country[]> => {
                 objectArray[i].flags
             )
         }
-
-
     }
     catch (error) {
-        console.error('An error has occurred: ', error)
+        console.error('An error has occurred while fetching country data: ', error)
     }
     finally {
         return countryArray

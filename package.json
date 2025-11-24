@@ -1,0 +1,17 @@
+{
+  "name": "rest-countries-api-with-color-theme-switcher-master",
+  "version": "1.0.0",
+  "description": "In this lab asynchronous API calls are simulated to explore Promise's. Calls are resolved and rejected randomly in order to simulate custom error classes and test how they handled.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}

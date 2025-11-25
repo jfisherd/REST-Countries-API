@@ -1,12 +1,21 @@
-import { contactApi } from "./services/apiService.js"
+console.log('script is running')
+
+import { contactApi } from "./services/apiService.js" // OPEN MAIN HTML PAGE IN LIVE SERVER
+console.log('import complete')
 
 const header = document.getElementById('header')
 const nav = document.getElementById('nav')
 const main = document.getElementById('main')
+console.log('DOM elements header, nav, main are now in js script. Contacting api...')
 
-const myCountries = await contactApi()
+const myCountries = await contactApi() // request the api one time to access all country data
+console.log('PAST LINE: const myCountries = await contactApi()')
 
 for (let i = 0; i < myCountries.length; i++) {
+
+    if (i<5) {
+        console.log(`i = ${i}`) // loop counter, dev use only
+    }
 
     let newCard = document.createElement('div') // make a new card
     newCard.setAttribute('class', 'card')
@@ -40,3 +49,5 @@ for (let i = 0; i < myCountries.length; i++) {
     // KEEP APPENDING
     main?.append(newCard) // append the body to the card
 }
+
+console.log('This is the console log in the script below the for loop')

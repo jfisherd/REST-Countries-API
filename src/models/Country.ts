@@ -1,3 +1,8 @@
+interface Flags { // an interface for the "flags" property, cannot access svg and png easily without
+    svg: string
+    png: string
+}
+
 export class Country {
     name: string
     topLevelDomain: string[]
@@ -8,7 +13,7 @@ export class Country {
     borders?: string[]
     currencies: object[]
     languages: object[]
-    flags: object
+    flags: Flags
 
     constructor(
         name: string,
@@ -20,7 +25,7 @@ export class Country {
         borders: string[],
         currencies: object[],
         languages: object[],
-        flags: object
+        flags: Flags
     ) {
         this.name = name
         this.topLevelDomain = topLevelDomain

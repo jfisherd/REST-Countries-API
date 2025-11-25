@@ -23,18 +23,20 @@ for (let i = 0; i < myCountries.length; i++) {
 
     let newCardTitle = document.createElement('h5') // make a title for the body
     newCardTitle.innerHTML = `${myCountries[i]?.name}` // United States of America
-    newCardBody.append(newCardTitle)
+    newCardBody.append(newCardTitle) // append title to body
 
     let newCardText = document.createElement('p') // make a paragraph for the body
     newCardText.innerHTML = `Population: ${myCountries[i]?.population}
                              Region: ${myCountries[i]?.region}
                              Capital: ${myCountries[i]?.population}
                             `
+                            // Population: 12,345
+                            // Region: Americas
+                            // Capital: Washington D.C.
     newCardBody.append(newCardText) // append the paragraph to the body
 
-    // Population: 12,345
-    // Region: Americas
-    // Capital: Washington D.C.
+
+
     // KEEP APPENDING
     main?.append(newCard) // append the body to the card
 }

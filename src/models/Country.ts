@@ -1,3 +1,9 @@
+interface Name {
+  common: string
+  official?: string
+  nativeName?: string
+}
+
 interface Currency {
   code: string
   name: string
@@ -12,43 +18,43 @@ interface Language {
 }
 
 interface Flag { // an interface for the "flags" property, cannot access svg and png easily without
-    svg: string
-    png: string
+  svg: string
+  png: string
 }
 
 export class Country {
-    name: string
-    topLevelDomain: string[]
-    capital: string
-    subregion: string
-    region: string
-    population: number
-    borders?: string[]
-    currencies: Currency[]
-    languages: Language[]
-    flags: Flag
+  name: Name
+  topLevelDomain: string[]
+  capital: string
+  subregion: string
+  region: string
+  population: number
+  borders?: string[]
+  currencies: Currency[]
+  languages: Language[]
+  flags: Flag
 
-    constructor(
-        name: string,
-        topLevelDomain: string[],
-        capital: string,
-        subregion: string,
-        region: string,
-        population: number,
-        borders: string[],
-        currencies: Currency[],
-        languages: Language[],
-        flags: Flag
-    ) {
-        this.name = name
-        this.topLevelDomain = topLevelDomain
-        this.capital = capital
-        this.subregion = subregion
-        this.region = region
-        this.population = population
-        this.borders = borders
-        this.currencies = currencies
-        this.languages = languages
-        this.flags = flags
-    }
+  constructor(
+    name: Name,
+    topLevelDomain: string[],
+    capital: string,
+    subregion: string,
+    region: string,
+    population: number,
+    borders: string[],
+    currencies: Currency[],
+    languages: Language[],
+    flags: Flag
+  ) {
+    this.name = name
+    this.topLevelDomain = topLevelDomain
+    this.capital = capital
+    this.subregion = subregion
+    this.region = region
+    this.population = population
+    this.borders = borders
+    this.currencies = currencies
+    this.languages = languages
+    this.flags = flags
+  }
 }

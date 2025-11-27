@@ -1,0 +1,46 @@
+/* 
+rgb(32,45,54); main color, dark grey
+rgb(43,55,67); secondary color, slightly lighter grey
+
+*/
+
+* {
+    color: white;
+    background-color: rgb(32,45,54);
+}
+
+header {
+    background-color: rgb(43,55,67);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.header-content {
+    background-color: rgb(43,55,67);
+}
+
+.card {
+    width: 300px;
+    margin: 20px;
+    background-color: rgb(43,55,67);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 100px
+}
+
+/* .card-title {
+    color: white;
+    background-color: green;
+} */
+
+/*
+
+@media (max-width: 799px) {
+
+}
+
+*/

@@ -11,6 +11,8 @@ console.log('DOM elements header, nav, main are now in js script. Contacting api
 const myCountries = await contactApi() // request the api one time to access all country data
 console.log('PAST LINE: const myCountries = await contactApi()')
 
+let myCards: object[] = []
+
 for (let i = 0; i < myCountries.length; i++) {
 
     if (i<5) {
@@ -20,6 +22,9 @@ for (let i = 0; i < myCountries.length; i++) {
     let newCard = document.createElement('div') // make a new card
     newCard.setAttribute('class', 'card')
     newCard.setAttribute('id', `card-${i}`)
+    newCard.addEventListener('click', () => {
+        // GO TO country page
+    })
 
     let newImage = document.createElement('img') // make an img element
     newImage.src = `${myCountries[i]?.flags.png}` // make the img source a flag
@@ -30,20 +35,25 @@ for (let i = 0; i < myCountries.length; i++) {
     newCardBody.setAttribute('id',`card-body-${i}`)
     newCard.append(newCardBody) // append body to card
 
-    let newCardTitle = document.createElement('h5') // make a title for the body
+    let newCardTitle = document.createElement('div') // make a title for the body
+    newCardTitle.setAttribute('class','card-title')
     // console.log(myCountries[i]?.name?.common ?? 'Country Name Missing')
     newCardTitle.textContent = `${myCountries[i]?.name.common}` // United States of America
     newCardBody.append(newCardTitle) // append title to body
 
     let newCardText = document.createElement('p') // make a paragraph for the body
-    newCardText.innerHTML = `Population: ${myCountries[i]?.population}
-                             Region: ${myCountries[i]?.region}
+    newCardText.textContent = `Population: ${myCountries[i]?.population}\n
+                             Region: ${myCountries[i]?.region}\n
                              Capital: ${myCountries[i]?.capital}
                             `
                             // Population: 12,345
                             // Region: Americas
                             // Capital: Washington D.C.
     newCardBody.append(newCardText) // append the paragraph to the body
+
+    // let newCardPopulation = document.createElement('div')
+    // newCardPopulation.innerHTML
+
 
     main?.append(newCard) // append the body to the card
 }

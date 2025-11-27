@@ -42,10 +42,7 @@ for (let i = 0; i < myCountries.length; i++) {
     newCardBody.append(newCardTitle) // append title to body
 
     let newCardText = document.createElement('p') // make a paragraph for the body
-    newCardText.textContent = `Population: ${myCountries[i]?.population}\n
-                             Region: ${myCountries[i]?.region}\n
-                             Capital: ${myCountries[i]?.capital}
-                            `
+    newCardText.innerHTML = `Population: ${myCountries[i]?.population} \n Region: ${myCountries[i]?.region} Capital: ${myCountries[i]?.capital}`
                             // Population: 12,345
                             // Region: Americas
                             // Capital: Washington D.C.
@@ -53,7 +50,6 @@ for (let i = 0; i < myCountries.length; i++) {
 
     // let newCardPopulation = document.createElement('div')
     // newCardPopulation.innerHTML
-
 
     main?.append(newCard) // append the body to the card
 }

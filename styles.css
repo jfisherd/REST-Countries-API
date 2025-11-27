@@ -20,17 +20,23 @@ header {
     background-color: rgb(43,55,67);
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 100px
+}
+
 .card {
     width: 300px;
     margin: 20px;
     background-color: rgb(43,55,67);
 }
 
-main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin: 100px
+.card-body {
+    white-space: pre-wrap; /* changes how HTML interprets white-space from the default of a single space, allows \n */
 }
+
+
 
 /* .card-title {
     color: white;

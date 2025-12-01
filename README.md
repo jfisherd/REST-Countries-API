@@ -1,14 +1,14 @@
 
 
-# Project 1, FrontEnd Mentor
+# Project 1, FrontEnd Mentor/REST Countries
 
 ## Description
-In this lab asynchronous API calls are simulated to explore Promise's. Calls are resolved and rejected randomly in order to simulate custom error classes and test how they handled. 
+In this project, api requests are made to gather information about different countries, and displayed on a webpage. Countries can be filtered by region and with a search term. 
 
 
 
 ## Running the program
-To view use this project, <!-- INSTRUCTIONS -->
+To view use this project, open home.html with Live Server. 
 <br>
 
 ## Reflection Questions

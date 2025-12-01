@@ -6,18 +6,18 @@ rgb(43,55,67); secondary color, slightly lighter grey
 
 * {
     color: white;
-    background-color: rgb(32,45,54);
+    background-color: rgb(32, 45, 54);
 }
 
 header {
-    background-color: rgb(43,55,67);
+    background-color: rgb(43, 55, 67);
     display: flex;
     justify-content: space-between;
 }
 
 
 .header-content {
-    background-color: rgb(43,55,67);
+    background-color: rgb(43, 55, 67);
 }
 
 main {
@@ -29,11 +29,12 @@ main {
 .card {
     width: 300px;
     margin: 20px;
-    background-color: rgb(43,55,67);
+    background-color: rgb(43, 55, 67);
 }
 
 .card-body {
-    white-space: pre-wrap; /* changes how HTML interprets white-space from the default of a single space, allows \n */
+    white-space: pre-wrap;
+    /* changes how HTML interprets white-space from the default of a single space, allows \n */
 }
 
 
@@ -43,10 +44,10 @@ main {
     background-color: green;
 } */
 
-/*
+
 
 @media (max-width: 799px) {
-
+    main {
+        grid-template-columns: 1fr;
+    }
 }
-
-*/

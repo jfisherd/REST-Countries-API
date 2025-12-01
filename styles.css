@@ -2,6 +2,13 @@
 rgb(32,45,54); main color, dark grey
 rgb(43,55,67); secondary color, slightly lighter grey
 
+- Blue 900 (Dark Mode Elements): hsl(209, 23%, 22%)
+- Blue 950 (Dark Mode Background): hsl(207, 26%, 17%)
+- Grey 950 (Light Mode Text): hsl(200, 15%, 8%)
+- Grey 400 (Light Mode Input): hsl(0, 0%, 50%)
+- Grey 50 (Light Mode Background): hsl(0, 0%, 99%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 100%, 100%)
+
 */
 
 * {
@@ -31,18 +38,28 @@ main {
 }
 
 .card {
-    width: 300px;
+    width: 320px;
     margin: 20px;
     background-color: rgb(43, 55, 67);
 }
 
 .card-body {
     white-space: pre-wrap;
+    background-color: rgb(43,55,67);
     /* changes how HTML interprets white-space from the default of a single space, allows \n */
 }
 
+h5 {
+    background-color: rgb(43,55,67);
+}
 
+p {
+    background-color: rgb(43,55,67);
+}
 
+/* .card-content {
+    
+} */
 /* .card-title {
     color: white;
     background-color: green;

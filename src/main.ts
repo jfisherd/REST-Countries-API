@@ -13,6 +13,8 @@ console.log('PAST LINE: const myCountries = await contactApi()')
 
 let myCards: object[] = []
 
+//
+
 for (let i = 0; i < myCountries.length; i++) {
 
     if (i<5) {

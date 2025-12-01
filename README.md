@@ -15,6 +15,10 @@ To view use this project, open home.html with Live Server.
 > Write a 200-300 word reflection discussing your development process, challenges faced, solutions implemented, and potential improvements.
 
 Errors handled separately will call their individual catch statements. This can stop an error from causing another error, and narrows troubleshooting to the exact component which is broken.
+
+An attempt was made to use Bootstrap, using the conveniently designed card class. The html structure was correct, but the styling turned out to be more difficult to manage. 
+
+
 <br>
 
 

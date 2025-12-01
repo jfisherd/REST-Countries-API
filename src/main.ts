@@ -5,7 +5,9 @@ console.log('import complete')
 
 const header = document.getElementById('header')
 const nav = document.getElementById('nav')
-const main = document.getElementById('main')
+const input: HTMLElement = document.getElementById('input') ?? document.createElement('input')
+const select: HTMLElement = document.getElementById('select') ?? document.createElement('select')
+const main: HTMLElement = document.getElementById('main') ?? document.createElement('main')
 console.log('DOM elements header, nav, main are now in js script. Contacting api...')
 
 const myCountries = await contactApi() // request the api one time to access all country data
@@ -43,7 +45,7 @@ for (let i = 0; i < myCountries.length; i++) {
     newCardBody.append(newCardTitle) // append title to body
 
     let newCardPopulation = document.createElement('p') // make a paragraph for population
-    newCardPopulation.innerText = `Population: ${myCountries[i]?.population}`             
+    newCardPopulation.innerText = `Population: ${myCountries[i]?.population}`         
 
     let newCardRegion = document.createElement('p') // make a paragraph for region
     newCardRegion.innerText = `Region: ${myCountries[i]?.region}`             
@@ -51,9 +53,31 @@ for (let i = 0; i < myCountries.length; i++) {
     let newCardCapital = document.createElement('p') // make a paragraph for capital
     newCardCapital.innerText = `Capital: ${myCountries[i]?.capital}`             
 
-    newCardBody.append(newCardPopulation, newCardRegion, newCardCapital) // append the paragraph to the body
+    // newCardBody.append(newCardPopulation,document.createElement('br'), newCardRegion, document.createElement('br'), newCardCapital) // append the paragraph to the body
+    newCardBody.appendChild(newCardPopulation)
+    newCardBody.appendChild(document.createElement('br'))
+    newCardBody.appendChild(newCardRegion)
+    newCardBody.appendChild(document.createElement('br'))
+    newCardBody.appendChild(newCardCapital)
 
     main?.append(newCard) // append the body to the card
 }
 
 console.log('This is the console log in the script below the for loop')
+
+select.addEventListener('change', () => {
+    main.innerHTML = ''
+    alert('a change has been selected')
+    // re draw main with cards filtered by region
+})
+
+input.addEventListener('change', () => {
+    // clear main
+    // re draw main with cards filtered by search input
+})
+
+input.addEventListener('click', () => {
+    // clear the input field
+    // clear main
+    // re draw main with cards filtered by search input
+})

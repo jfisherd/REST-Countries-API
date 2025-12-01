@@ -49,18 +49,18 @@ main {
 }
 
 .card-body {
-    background-color: blue;
+    background-color: hsl(209, 23%, 22%);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 3fr;
 }
 
 h5 {
-    background-color: red;
+    background-color: hsl(209, 23%, 22%);
 }
 
 p {
-    background-color: green;
+    background-color: hsl(209, 23%, 22%);
 }
 
 

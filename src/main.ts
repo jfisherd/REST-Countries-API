@@ -32,26 +32,26 @@ for (let i = 0; i < myCountries.length; i++) {
     newImage.src = `${myCountries[i]?.flags.png}` // make the img source a flag
     newCard.append(newImage) // append img to card
 
-    let newCardBody = document.createElement('div') // make a body for the card
+    let newCardBody = document.createElement('span') // make a body for the card
     newCardBody.setAttribute('class', 'card-body')
     newCardBody.setAttribute('id',`card-body-${i}`)
     newCard.append(newCardBody) // append body to card
 
     let newCardTitle = document.createElement('div') // make a title for the body
     newCardTitle.setAttribute('class','card-title')
-    // console.log(myCountries[i]?.name?.common ?? 'Country Name Missing')
-    newCardTitle.textContent = `${myCountries[i]?.name.common}` // United States of America
+    newCardTitle.textContent = `${myCountries[i]?.name.common}`
     newCardBody.append(newCardTitle) // append title to body
 
-    let newCardText = document.createElement('p') // make a paragraph for the body
-    newCardText.innerHTML = `Population: ${myCountries[i]?.population} \n Region: ${myCountries[i]?.region} Capital: ${myCountries[i]?.capital}`
-                            // Population: 12,345
-                            // Region: Americas
-                            // Capital: Washington D.C.
-    newCardBody.append(newCardText) // append the paragraph to the body
+    let newCardPopulation = document.createElement('p') // make a paragraph for population
+    newCardPopulation.innerText = `Population: ${myCountries[i]?.population}`             
 
-    // let newCardPopulation = document.createElement('div')
-    // newCardPopulation.innerHTML
+    let newCardRegion = document.createElement('p') // make a paragraph for region
+    newCardRegion.innerText = `Region: ${myCountries[i]?.region}`             
+
+    let newCardCapital = document.createElement('p') // make a paragraph for capital
+    newCardCapital.innerText = `Capital: ${myCountries[i]?.capital}`             
+
+    newCardBody.append(newCardPopulation, newCardRegion, newCardCapital) // append the paragraph to the body
 
     main?.append(newCard) // append the body to the card
 }

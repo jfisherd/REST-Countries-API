@@ -13,17 +13,22 @@ rgb(43,55,67); secondary color, slightly lighter grey
 
 * {
     color: white;
-    background-color: rgb(32, 45, 54);
+    background-color: hsl(207, 26%, 17%);
 }
 
 header {
-    background-color: rgb(43, 55, 67);
+    background-color: hsl(209, 23%, 22%);
     display: flex;
     justify-content: space-between;
 }
 
 .header-content {
-    background-color: rgb(43, 55, 67);
+    background-color: hsl(209, 23%, 22%);
+}
+
+svg {
+    width: 15px;
+    background-color: hsl(209, 23%, 22%);
 }
 
 nav {
@@ -39,23 +44,26 @@ main {
 
 .card {
     width: 320px;
-    margin: 20px;
+    margin: 30px;
     background-color: rgb(43, 55, 67);
 }
 
 .card-body {
-    white-space: pre-wrap;
-    background-color: rgb(43,55,67);
-    /* changes how HTML interprets white-space from the default of a single space, allows \n */
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr;
 }
 
 h5 {
-    background-color: rgb(43,55,67);
+    background-color: red;
 }
 
 p {
-    background-color: rgb(43,55,67);
+    background-color: green;
 }
+
+
 
 /* .card-content {
     

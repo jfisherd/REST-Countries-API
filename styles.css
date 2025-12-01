@@ -15,9 +15,13 @@ header {
     justify-content: space-between;
 }
 
-
 .header-content {
     background-color: rgb(43, 55, 67);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
 }
 
 main {
@@ -49,5 +53,10 @@ main {
 @media (max-width: 799px) {
     main {
         grid-template-columns: 1fr;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: 1 fr;
     }
 }

@@ -4,6 +4,7 @@ import { contactApi } from "./services/apiService.js" // OPEN MAIN HTML PAGE IN 
 console.log('import complete')
 
 const header = document.getElementById('header')
+const darkMode = document.getElementById('dark-mode')
 const nav = document.getElementById('nav')
 const input: HTMLElement = document.getElementById('input') ?? document.createElement('input')
 const select: HTMLElement = document.getElementById('select') ?? document.createElement('select')
@@ -15,7 +16,7 @@ console.log('PAST LINE: const myCountries = await contactApi()')
 
 let myCards: object[] = []
 
-//
+// 
 
 for (let i = 0; i < myCountries.length; i++) {
 
@@ -28,6 +29,8 @@ for (let i = 0; i < myCountries.length; i++) {
     newCard.setAttribute('id', `card-${i}`)
     newCard.addEventListener('click', () => {
         // GO TO country page
+        alert('CARD CLICKED')
+        window.open('../detail.html')
     })
 
     let newImage = document.createElement('img') // make an img element
@@ -55,9 +58,9 @@ for (let i = 0; i < myCountries.length; i++) {
 
     // newCardBody.append(newCardPopulation,document.createElement('br'), newCardRegion, document.createElement('br'), newCardCapital) // append the paragraph to the body
     newCardBody.appendChild(newCardPopulation)
-    newCardBody.appendChild(document.createElement('br'))
+    // newCardBody.appendChild(document.createElement('br'))
     newCardBody.appendChild(newCardRegion)
-    newCardBody.appendChild(document.createElement('br'))
+    // newCardBody.appendChild(document.createElement('br'))
     newCardBody.appendChild(newCardCapital)
 
     main?.append(newCard) // append the body to the card
@@ -65,19 +68,29 @@ for (let i = 0; i < myCountries.length; i++) {
 
 console.log('This is the console log in the script below the for loop')
 
-select.addEventListener('change', () => {
-    main.innerHTML = ''
-    alert('a change has been selected')
+darkMode?.addEventListener('click', () => {
+    console.log('Dark Mode toggle clicked')
+    alert('Dark Mode has been clicked')
+    // toggle light/dark mode
+})
+
+select?.addEventListener('change', (event) => {
+    console.log('this log comfirms a change has been selected')
+    alert('a change has been selected') // ALERT NOT ALERTING
     // re draw main with cards filtered by region
 })
 
-input.addEventListener('change', () => {
+input?.addEventListener('change', () => {
     // clear main
-    // re draw main with cards filtered by search input
+    // re draw main with cards filtered by search input, dynamic
 })
 
-input.addEventListener('click', () => {
+input.addEventListener('click', () => { // CONSIDER DELETING FOR BETTER USER EXPERIENCE
     // clear the input field
     // clear main
     // re draw main with cards filtered by search input
 })
+
+const testButton = document.createElement('button')
+testButton.innerText = 'The Testing Button'
+nav?.append(testButton)

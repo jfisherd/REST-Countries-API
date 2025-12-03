@@ -55,6 +55,10 @@ main {
     grid-template-rows: 3fr;
 }
 
+.card-title {
+    background-color: hsl(209, 23%, 22%);
+}
+
 h5 {
     background-color: hsl(209, 23%, 22%);
 }

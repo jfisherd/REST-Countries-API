@@ -17,17 +17,15 @@ const myCountries = await contactApi() // request the api one time to access all
 console.log('PAST LINE: const myCountries = await contactApi()')
 
 let myCards: object[] = []
+let myTempCards: object[] = []
 
-
-const testButton = document.createElement('button')
-testButton.innerText = 'The Testing Button'
-nav?.append(testButton)
-
-// 
+// const testButton = document.createElement('button') // The testing button... keep for testing
+// testButton.innerText = 'The Testing Button'
+// nav?.append(testButton)
 
 for (let i = 0; i < myCountries.length; i++) {
 
-    if (i<5) {
+    if (i < 5) {
         console.log(`i = ${i}`) // loop counter, dev use only
     }
 
@@ -46,28 +44,25 @@ for (let i = 0; i < myCountries.length; i++) {
 
     let newCardBody = document.createElement('span') // make a body for the card
     newCardBody.setAttribute('class', 'card-body')
-    newCardBody.setAttribute('id',`card-body-${i}`)
+    newCardBody.setAttribute('id', `card-body-${i}`)
     newCard.append(newCardBody) // append body to card
 
     let newCardTitle = document.createElement('div') // make a title for the body
-    newCardTitle.setAttribute('class','card-title')
+    newCardTitle.setAttribute('class', 'card-title')
     newCardTitle.textContent = `${myCountries[i]?.name.common}`
     newCardBody.append(newCardTitle) // append title to body
 
     let newCardPopulation = document.createElement('p') // make a paragraph for population
-    newCardPopulation.innerText = `Population: ${myCountries[i]?.population}`         
+    newCardPopulation.innerText = `Population: ${myCountries[i]?.population}`
 
     let newCardRegion = document.createElement('p') // make a paragraph for region
-    newCardRegion.innerText = `Region: ${myCountries[i]?.region}`             
+    newCardRegion.innerText = `Region: ${myCountries[i]?.region}`
 
     let newCardCapital = document.createElement('p') // make a paragraph for capital
-    newCardCapital.innerText = `Capital: ${myCountries[i]?.capital}`             
+    newCardCapital.innerText = `Capital: ${myCountries[i]?.capital}`
 
-    // newCardBody.append(newCardPopulation,document.createElement('br'), newCardRegion, document.createElement('br'), newCardCapital) // append the paragraph to the body
     newCardBody.appendChild(newCardPopulation)
-    // newCardBody.appendChild(document.createElement('br'))
     newCardBody.appendChild(newCardRegion)
-    // newCardBody.appendChild(document.createElement('br'))
     newCardBody.appendChild(newCardCapital)
 
     main?.append(newCard) // append the body to the card
@@ -84,6 +79,7 @@ darkMode?.addEventListener('click', () => {
 select?.addEventListener('change', (event) => {
     console.log('this log comfirms a change has been selected')
     alert('a change has been selected') // ALERT NOT ALERTING
+
     // re draw main with cards filtered by region
 })
 

@@ -1,7 +1,3 @@
-alert('Script start')
-
-console.log('script is running')
-
 import { contactApi } from "./services/apiService.js" // OPEN MAIN HTML PAGE IN LIVE SERVER
 console.log('import complete')
 
@@ -13,6 +9,11 @@ const select: HTMLElement = document.getElementById('select') ?? document.create
 const main: HTMLElement = document.getElementById('main') ?? document.createElement('main')
 console.log('DOM elements header, nav, main are now in js script. Contacting api...')
 
+const button = document.getElementById('button') // Back button for individual country page
+button?.addEventListener('click', (event) => {
+    window.open('../home.html')
+})
+
 const myCountries = await contactApi() // request the api one time to access all country data
 console.log('PAST LINE: const myCountries = await contactApi()')
 
@@ -23,6 +24,8 @@ let myTempCards: object[] = []
 // testButton.innerText = 'The Testing Button'
 // nav?.append(testButton)
 
+
+// MAKE A 'drawCards' FUNCTION for event listeners to invoke after clearing main
 for (let i = 0; i < myCountries.length; i++) {
 
     if (i < 5) {

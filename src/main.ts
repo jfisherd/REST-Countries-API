@@ -1,3 +1,5 @@
+alert('Script start')
+
 console.log('script is running')
 
 import { contactApi } from "./services/apiService.js" // OPEN MAIN HTML PAGE IN LIVE SERVER
@@ -15,6 +17,11 @@ const myCountries = await contactApi() // request the api one time to access all
 console.log('PAST LINE: const myCountries = await contactApi()')
 
 let myCards: object[] = []
+
+
+const testButton = document.createElement('button')
+testButton.innerText = 'The Testing Button'
+nav?.append(testButton)
 
 // 
 
@@ -91,6 +98,4 @@ input.addEventListener('click', () => { // CONSIDER DELETING FOR BETTER USER EXP
     // re draw main with cards filtered by search input
 })
 
-const testButton = document.createElement('button')
-testButton.innerText = 'The Testing Button'
-nav?.append(testButton)
+alert('Script end')

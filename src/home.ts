@@ -1,5 +1,17 @@
+// The testing button... keep for testing
+// const testButton = document.createElement('button') 
+// testButton.innerText = 'The Testing Button'
+// nav?.append(testButton)
+// testButton.addEventListener('click', () => {
+//     console.log('Testing Button has been clicked')
+//     alert('You clicked the Testing Button!')
+// })
+
+
 import { contactApi } from "./services/apiService.js" // OPEN MAIN HTML PAGE IN LIVE SERVER
 console.log('import complete')
+
+
 
 const header = document.getElementById('header')
 const darkMode = document.getElementById('dark-mode')
@@ -8,6 +20,15 @@ const input: HTMLElement = document.getElementById('input') ?? document.createEl
 const select: HTMLElement = document.getElementById('select') ?? document.createElement('select')
 const main: HTMLElement = document.getElementById('main') ?? document.createElement('main')
 console.log('DOM elements header, nav, main are now in js script. Contacting api...')
+
+// The testing button... 
+const testButton = document.createElement('button') 
+testButton.innerText = 'The Testing Button'
+nav?.append(testButton)
+testButton.addEventListener('click', () => {
+    console.log('Testing Button has been clicked')
+    alert('You clicked the Testing Button!')
+})
 
 const button = document.getElementById('button') // Back button for individual country page
 button?.addEventListener('click', (event) => {
@@ -19,11 +40,6 @@ console.log('PAST LINE: const myCountries = await contactApi()')
 
 let myCards: object[] = []
 let myTempCards: object[] = []
-
-// const testButton = document.createElement('button') // The testing button... keep for testing
-// testButton.innerText = 'The Testing Button'
-// nav?.append(testButton)
-
 
 // MAKE A 'drawCards' FUNCTION for event listeners to invoke after clearing main
 for (let i = 0; i < myCountries.length; i++) {
@@ -86,12 +102,16 @@ select?.addEventListener('change', (event) => {
     // re draw main with cards filtered by region
 })
 
-input?.addEventListener('change', () => {
-    // clear main
+input?.addEventListener('input', (event) => {
+    console.log('a change has been made to the input')
+    main.innerHTML = ''
     // re draw main with cards filtered by search input, dynamic
+
 })
 
-input.addEventListener('click', () => { // CONSIDER DELETING FOR BETTER USER EXPERIENCE
+
+
+input.addEventListener('click', () => { // CONSIDER DELETING THIS LISTENER FOR BETTER USER EXPERIENCE
     // clear the input field
     // clear main
     // re draw main with cards filtered by search input
